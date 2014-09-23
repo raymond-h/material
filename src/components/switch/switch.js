@@ -66,7 +66,7 @@ function MaterialSwitch(checkboxDirectives, radioButtonDirectives) {
   };
 
   function compile(element, attr) {
-    
+
     var thumb = angular.element(element[0].querySelector('.material-switch-thumb'));
     //Copy down disabled attributes for checkboxDirective to use
     thumb.attr('disabled', attr.disabled);
