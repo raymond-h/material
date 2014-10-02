@@ -76,8 +76,6 @@ function MaterialCheckboxDirective(inputDirectives, $materialInkRipple, $materia
     tAttrs.tabIndex = 0;
     tElement.attr('role', tAttrs.type);
 
-    $materialAria.expect(tElement, 'aria-label', tElement.text());
-
     return function postLink(scope, element, attr, ngModelCtrl) {
       var checked = false;
 
@@ -89,6 +87,8 @@ function MaterialCheckboxDirective(inputDirectives, $materialInkRipple, $materia
         $parsers: [],
         $formatters: []
       };
+
+      $materialAria.expect(element, 'aria-label', true);
 
       // Reuse the original input[type=checkbox] directive from Angular core.
       // This is a bit hacky as we need our own event listener and own render
@@ -120,7 +120,6 @@ function MaterialCheckboxDirective(inputDirectives, $materialInkRipple, $materia
 
       function render() {
         checked = ngModelCtrl.$viewValue;
-        // element.attr('aria-checked', checked);
         if(checked) {
           element.addClass(CHECKED_CSS);
         } else {

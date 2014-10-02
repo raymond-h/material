@@ -247,6 +247,6 @@ function MaterialDialogService($timeout, $rootElement, $materialEffects, $animat
       dialogContent = element;
     }
     var defaultText = Util.stringFromTextBody(dialogContent.text(), 3);
-    $materialAria.expect(element, 'aria-label', defaultText);
+    $materialAria.expect(element, 'aria-label', true, defaultText);
   }
 }

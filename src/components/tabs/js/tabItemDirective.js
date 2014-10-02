@@ -200,7 +200,7 @@ function MaterialTabDirective($materialInkRipple, $compile, $materialAria) {
           'aria-labelledby': tabId
         });
 
-        $materialAria.expect(element, 'aria-label', element.text());
+        $materialAria.expect(element, 'aria-label', true);
       }
 
     };

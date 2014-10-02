@@ -1,6 +1,7 @@
 describe('radioButton', function() {
   var CHECKED_CSS = 'material-checked';
 
+  beforeEach(TestUtil.mockRaf);
   beforeEach(module('material.components.radioButton'));
 
   it('should set checked css class', inject(function($compile, $rootScope) {
@@ -31,7 +32,7 @@ describe('radioButton', function() {
     expect(rbGroupElement.find('material-radio-button').eq(0).attr('role')).toEqual('radio');
   }));
 
-  it('should set aria attributes', inject(function($compile, $rootScope) {
+  it('should set aria states', inject(function($compile, $rootScope) {
     var element = $compile('<material-radio-group ng-model="color">' +
                             '<material-radio-button value="blue"></material-radio-button>' +
                             '<material-radio-button value="green"></material-radio-button>' +
@@ -48,6 +49,26 @@ describe('radioButton', function() {
 
     expect(element.attr('aria-activedescendant')).toEqual(rbElements.eq(1).attr('id'));
     expect(element.attr('aria-activedescendant')).not.toEqual(rbElements.eq(0).attr('id'));
+  }));
+
+  it('should warn developers they need a label', inject(function($compile, $rootScope, $log){
+    spyOn($log, "warn");
+    var element = $compile('<material-radio-group ng-model="color">' +
+                            '<material-radio-button value="blue"></material-radio-button>' +
+                            '<material-radio-button value="green"></material-radio-button>' +
+                          '</material-radio-group>')($rootScope);
+
+    expect($log.warn).toHaveBeenCalled();
+  }));
+
+  it('should create an aria label from provided text', inject(function($compile, $rootScope) {
+    var element = $compile('<material-radio-group ng-model="color">' +
+                            '<material-radio-button value="blue">Blue</material-radio-button>' +
+                            '<material-radio-button value="green">Green</material-radio-button>' +
+                          '</material-radio-group>')($rootScope);
+
+    var rbElements = element.find('material-radio-button');
+    expect(rbElements.eq(0).attr('aria-label')).toEqual('Blue');
   }));
 
   it('should be operable via arrow keys', inject(function($compile, $rootScope) {

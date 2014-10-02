@@ -1,6 +1,7 @@
 describe('<material-switch>', function() {
   var CHECKED_CSS = 'material-checked';
 
+  beforeEach(TestUtil.mockRaf);
   beforeEach(module('ngAria'));
   beforeEach(module('material.components.switch'));
 

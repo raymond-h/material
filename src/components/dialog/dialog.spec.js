@@ -1,5 +1,6 @@
 describe('$materialDialog', function() {
   
+  beforeEach(TestUtil.mockRaf);
   beforeEach(module('material.components.dialog', 'ngAnimateMock'));
 
   beforeEach(inject(function spyOnMaterialEffects($materialEffects, $$q, $animate) {

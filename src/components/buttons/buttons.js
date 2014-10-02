@@ -95,7 +95,7 @@ function MaterialButtonDirective(ngHrefDirectives, $materialInkRipple, $material
         });
 
       return function postLink(scope, element, attr) {
-        $materialAria.expect(element, 'aria-label', element.text());
+        $materialAria.expect(element, 'aria-label', true);
         $materialInkRipple.attachButtonBehavior(element);
       };
     }
