@@ -1,8 +1,8 @@
 angular.module('dialogDemo1', ['ngMaterial'])
 
-.controller('AppCtrl', function($scope, $materialDialog) {
+.controller('AppCtrl', function($scope, $mdDialog) {
   $scope.dialogBasic = function(ev) {
-    $materialDialog.show({
+    $mdDialog.show({
       templateUrl: 'dialog1.tmpl.html',
       targetEvent: ev,
       controller: DialogController
@@ -10,7 +10,7 @@ angular.module('dialogDemo1', ['ngMaterial'])
   };
 
   $scope.dialogAdvanced = function(ev) {
-    $materialDialog.show({
+    $mdDialog.show({
       templateUrl: 'dialog2.tmpl.html',
       targetEvent: ev,
       controller: DialogController
@@ -22,12 +22,12 @@ angular.module('dialogDemo1', ['ngMaterial'])
   };
 });
 
-function DialogController($scope, $materialDialog) {
+function DialogController($scope, $mdDialog) {
   $scope.hide = function() {
-    $materialDialog.hide();
+    $mdDialog.hide();
   };
 
   $scope.answer = function(answer) {
-    $materialDialog.hide(answer);
+    $mdDialog.hide(answer);
   };
 }

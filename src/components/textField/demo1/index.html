@@ -1,14 +1,14 @@
 
 <div ng-controller="DemoController" layout="vertical">
 
-  <material-toolbar class="theme-dark-tff material-medium-tall" style="padding-top:15px;">
-    <div class="material-toolbar-tools dark">
+  <md-toolbar class="theme-dark-tff md-medium-tall" style="padding-top:15px;">
+    <div class="md-toolbar-tools dark">
       <tf-float label="Title"  value="user.title"   ></tf-float>
       <tf-float label="eMail"  value="user.email" type="email" ></tf-float>
     </div>
-  </material-toolbar>
+  </md-toolbar>
 
-  <material-content>
+  <md-content>
     <form style="padding: 20px;">
       <tf-float label="Company"       value="user.company"    disabled > </tf-float>
       <div class="row">
@@ -23,6 +23,6 @@
       </div>
       <tf-float label="Country"       value="user.country"    disabled > </tf-float>
     </form>
-  </material-content>
+  </md-content>
 
 </div>

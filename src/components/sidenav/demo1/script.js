@@ -1,23 +1,23 @@
 
 angular.module('sidenavDemo1', ['ngMaterial'])
 
-.controller('AppCtrl', function($scope, $timeout, $materialSidenav) {
+.controller('AppCtrl', function($scope, $timeout, $mdSidenav) {
   $scope.toggleLeft = function() {
-    $materialSidenav('left').toggle();
+    $mdSidenav('left').toggle();
   };
   $scope.toggleRight = function() {
-    $materialSidenav('right').toggle();
+    $mdSidenav('right').toggle();
   };
 })
 
-.controller('LeftCtrl', function($scope, $timeout, $materialSidenav) {
+.controller('LeftCtrl', function($scope, $timeout, $mdSidenav) {
   $scope.close = function() {
-    $materialSidenav('left').close();
+    $mdSidenav('left').close();
   };
 })
 
-.controller('RightCtrl', function($scope, $timeout, $materialSidenav) {
+.controller('RightCtrl', function($scope, $timeout, $mdSidenav) {
   $scope.close = function() {
-    $materialSidenav('right').close();
+    $mdSidenav('right').close();
   };
 });

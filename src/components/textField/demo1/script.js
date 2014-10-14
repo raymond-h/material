@@ -52,9 +52,9 @@ angular.module('textFieldDemo1', ['ngMaterial'])
         }
       },
       template:
-        '<material-input-group ng-disabled="isDisabled">' +
+        '<md-input-group ng-disabled="isDisabled">' +
           '<label for="{{fid}}">{{label}}</label>' +
-          '<material-input id="{{fid}}" ng-model="value">' +
-        '</material-input-group>'
+          '<md-input id="{{fid}}" ng-model="value">' +
+        '</md-input-group>'
     };
   });

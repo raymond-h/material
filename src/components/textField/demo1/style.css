@@ -15,7 +15,7 @@
  * }
  *
  *
- * material-input-group.long {
+ * md-input-group.long {
  *   input {
  *      width : 262px;
  *   }
@@ -49,6 +49,6 @@ form > .row {
     margin: 0 8px;
 }
 
-material-input-group.long > input {
+md-input-group.long > input {
     width: 264px;
 }
