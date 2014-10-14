@@ -1,8 +1,8 @@
 angular.module('bottomSheetDemo1', ['ngMaterial'])
 
-.controller('BottomSheetExample', function($scope, $timeout, $materialBottomSheet) {
+.controller('BottomSheetExample', function($scope, $timeout, $mdBottomSheet) {
   $scope.showListBottomSheet = function($event) {
-    $materialBottomSheet.show({
+    $mdBottomSheet.show({
       templateUrl: 'bottom-sheet-list-template.html',
       controller: 'ListBottomSheetCtrl',
       targetEvent: $event
@@ -12,7 +12,7 @@ angular.module('bottomSheetDemo1', ['ngMaterial'])
   };
 
   $scope.showGridBottomSheet = function($event) {
-    $materialBottomSheet.show({
+    $mdBottomSheet.show({
       templateUrl: 'bottom-sheet-grid-template.html',
       controller: 'GridBottomSheetCtrl',
       targetEvent: $event
@@ -22,7 +22,7 @@ angular.module('bottomSheetDemo1', ['ngMaterial'])
   };
 })
 
-.controller('ListBottomSheetCtrl', function($scope, $materialBottomSheet) {
+.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) {
 
   $scope.items = [
     { name: 'Share', icon: 'share' },
@@ -33,10 +33,10 @@ angular.module('bottomSheetDemo1', ['ngMaterial'])
 
   $scope.listItemClick = function($index) {
     var clickedItem = $scope.items[$index];
-    $materialBottomSheet.hide(clickedItem);
+    $mdBottomSheet.hide(clickedItem);
   };
 })
-.controller('GridBottomSheetCtrl', function($scope, $materialBottomSheet) {
+.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
 
   $scope.items = [
     { name: 'Hangout', icon: 'hangout' },
@@ -49,6 +49,6 @@ angular.module('bottomSheetDemo1', ['ngMaterial'])
 
   $scope.listItemClick = function($index) {
     var clickedItem = $scope.items[$index];
-    $materialBottomSheet.hide(clickedItem);
+    $mdBottomSheet.hide(clickedItem);
   };
 });

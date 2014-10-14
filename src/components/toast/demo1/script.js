@@ -1,7 +1,7 @@
 
 angular.module('toastDemo1', ['ngMaterial'])
 
-.controller('AppCtrl', function($scope, $materialToast, $animate) {
+.controller('AppCtrl', function($scope, $mdToast, $animate) {
   
   $scope.toastPosition = {
     bottom: false,
@@ -17,26 +17,26 @@ angular.module('toastDemo1', ['ngMaterial'])
   };
 
   $scope.complexToastIt = function() {
-    $materialToast.show({
+    $mdToast.show({
       controller: 'ToastCtrl',
       templateUrl: 'toast-template.html',
-      duration: 6000,
+      hideDelay: 6000,
       position: $scope.getToastPosition()
     });
   };
 
   $scope.toastIt = function() {
-    $materialToast.show({
-      template: '<material-toast>Hello, ' + Math.random() + '</material-toast>',
-      duration: 2000,
+    $mdToast.show({
+      template: '<md-toast>Hello, ' + Math.random() + '</md-toast>',
+      hideDelay: 2000,
       position: $scope.getToastPosition()
     });
   };
 
 })
 
-.controller('ToastCtrl', function($scope, $materialToast) {
+.controller('ToastCtrl', function($scope, $mdToast) {
   $scope.closeToast = function() {
-    $materialToast.hide();
+    $mdToast.hide();
   };
 });
