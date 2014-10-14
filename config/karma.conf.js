@@ -12,10 +12,13 @@ module.exports = {
     'bower_components/angular-mocks/angular-mocks.js',
     'bower_components/hammerjs/hammer.js',
     'config/test-utils.js',
-  ]
-    .concat(buildConfig.paths.js)
-    .concat(buildConfig.paths.test),
-
+    'src/core/**/*.js',
+    'src/components/**/*.js',
+    'src/services/**/*.js',
+  ],
+  exclude: [
+    '**demo*/*.js',
+  ],
   port: 9876,
   reporters: ['progress'],
   colors: true,
